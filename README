@@ -1,0 +1,34 @@
+(C) GPL, DOHMATOB E. Dopgima & Jerôme CROS, 17th March 2011 (Talence)
+
+HOWTO
+=====
+NOTE: Make sure the environment is correctly configured for module
+compilation (kernel headers and sources must be correctly installed and the
+kernel re-built against them, etc.)
+
+bash config.sh builds all the modules and single-sources.
+
+halph-jiffie.c
+______________
+main rootkit (file hiding, process hiding, process promotion to root,
+page-fault handler hooking, module hiding, etc.)
+
+To install, 
+insmod halph-jiffie.ko
+
+
+root-shell-from-segfault.c
+__________________________
+rootkit to hook page-fault handler and allow root shells to be spawn by
+segfaults!
+
+To install,
+insmod root-shell-from-segfault.ko
+and then,
+page_fault/page_fault
+
+
+cr0-police
+__________
+cr0-based anti-rootkit; kills detects when someone is trying to turn off WP
+flag in CR0.  
